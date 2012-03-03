@@ -20,7 +20,6 @@ $app['description'] = lang('user_profile_app_description');
 $app['name'] = lang('user_profile_app_name');
 $app['category'] = lang('base_category_my_account');
 $app['subcategory'] = lang('base_subcategory_accounts');
-$app['menu_enabled'] = FALSE;
 
 /////////////////////////////////////////////////////////////////////////////
 // Packaging
@@ -34,4 +33,8 @@ $app['requires'] = array(
 $app['core_requires'] = array(
     'app-accounts-core',
     'system-users-driver', 
+);
+
+$app['core_file_manifest'] = array(
+   'user_profile.acl' => array( 'target' => '/var/clearos/base/access_control/authenticated/user_profile' ),
 );

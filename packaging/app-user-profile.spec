@@ -37,6 +37,7 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/user_profile
 cp -r * %{buildroot}/usr/clearos/apps/user_profile/
 
+install -D -m 0644 packaging/user_profile.acl %{buildroot}/var/clearos/base/access_control/authenticated/user_profile
 
 %post
 logger -p local6.notice -t installer 'app-user-profile - installing'
@@ -79,3 +80,4 @@ exit 0
 /usr/clearos/apps/user_profile/deploy
 /usr/clearos/apps/user_profile/language
 /usr/clearos/apps/user_profile/libraries
+/var/clearos/base/access_control/authenticated/user_profile
