@@ -37,7 +37,7 @@ $this->lang->load('base');
 $this->lang->load('user_profile');
 
 ///////////////////////////////////////////////////////////////////////////////
-// Form open
+// Form
 ///////////////////////////////////////////////////////////////////////////////
 
 echo form_open('/user_profile', array('autocomplete' => 'off'));
@@ -80,19 +80,17 @@ echo fieldset_footer();
 // Password fields
 ///////////////////////////////////////////////////////////////////////////////
 
-echo fieldset_header(lang('base_password'));
-echo field_password('old_password', '', lang('base_current_password'));
-echo field_password('password', '', lang('base_new_password'));
-echo field_password('verify', '', lang('base_verify'));
-echo fieldset_footer();
+if ($mode === 'edit') {
+    echo fieldset_header(lang('base_password'));
+    echo field_password('old_password', '', lang('base_current_password'));
+    echo field_password('password', '', lang('base_new_password'));
+    echo field_password('verify', '', lang('base_verify'));
+    echo fieldset_footer();
 
-///////////////////////////////////////////////////////////////////////////////
-// Form close
-///////////////////////////////////////////////////////////////////////////////
-
-echo field_button_set(
-    array(form_submit_update('submit'))
-);
+    echo field_button_set(
+        array(form_submit_update('submit'))
+    );
+}
 
 echo form_footer();
 echo form_close();

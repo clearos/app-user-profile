@@ -1,7 +1,7 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 1.0.4
+Version: 1.0.6
 Release: 1%{dist}
 Summary: User Profile
 License: GPLv3
@@ -12,9 +12,10 @@ Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 Requires: app-accounts
 Requires: app-groups
+Requires: app-users
 
 %description
-User Profile description...
+The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
 
 %package core
 Summary: User Profile - APIs and install
@@ -22,10 +23,12 @@ License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: app-accounts-core
+Requires: app-groups-core
+Requires: app-users-core >= 1.0.6
 Requires: system-users-driver
 
 %description core
-User Profile description...
+The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
 
 This package provides the core API and libraries.
 

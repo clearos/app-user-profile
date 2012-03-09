@@ -33,9 +33,7 @@
 // D E P E N D E N C I E S
 ///////////////////////////////////////////////////////////////////////////////
 
-// Exceptions
-//-----------
-
+use \clearos\apps\accounts\Accounts_Engine as Accounts_Engine;
 use \Exception as Exception;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -81,8 +79,9 @@ class User_Profile extends ClearOS_Controller
 
         $username = $this->session->userdata('username');
 
-        $this->lang->load('users');
+        $this->lang->load('user_profile');
         $this->load->factory('users/User_Factory', $username);
+        $this->load->factory('accounts/Accounts_Factory');
 
         // Validation
         //-----------
@@ -124,8 +123,6 @@ class User_Profile extends ClearOS_Controller
 
                 // Handle page status a bit differently here
                 $password_updated = TRUE;
-            //$this->page->set_message(lang('base_your_password_has_been_updated'), 'highlight');
-             //   $this->page->set_status_updated();
             } catch (Exception $e) {
                 $this->page->view_exception($e);
                 return;
@@ -138,6 +135,7 @@ class User_Profile extends ClearOS_Controller
         try {
             $data['info_map'] = $this->user->get_info_map();
             $data['user_info'] = $this->user->get_info();
+            $data['mode'] = ($this->accounts->get_capability() === Accounts_Engine::CAPABILITY_READ_WRITE) ? 'edit' : 'view';
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;
@@ -163,7 +161,7 @@ class User_Profile extends ClearOS_Controller
         // Load libraries
         //---------------
 
-        $this->lang->load('users');
+        $this->lang->load('user_profile');
         $this->load->library('base/Posix_User', 'root');
 
         // Validation
@@ -201,8 +199,6 @@ class User_Profile extends ClearOS_Controller
 
                 // Handle page status a bit differently here
                 $password_updated = TRUE;
-            //$this->page->set_message(lang('base_your_password_has_been_updated'), 'highlight');
-             //   $this->page->set_status_updated();
             } catch (Exception $e) {
                 $this->page->view_exception($e);
                 return;
