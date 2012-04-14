@@ -1,7 +1,7 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 1.0.10
+Version: 1.1.0
 Release: 1%{dist}
 Summary: User Profile
 License: GPLv3
@@ -18,7 +18,7 @@ Requires: app-users
 The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
 
 %package core
-Summary: User Profile - APIs and install
+Summary: User Profile - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
