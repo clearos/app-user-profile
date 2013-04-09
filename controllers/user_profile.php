@@ -186,6 +186,18 @@ class User_Profile extends ClearOS_Controller
         } else if ($old_password && !$this->posix_user->check_password($old_password)) {
             $this->form_validation->set_error('old_password', lang('base_password_is_invalid'));
             $form_ok = FALSE;
+        } else if (!empty($password)) {
+            try {
+                $is_weak = $this->posix_user->is_weak_password($this->input->post('password'));
+            } catch (Engine_Exception $e) {
+                $this->page->view_exception($e);
+                return;
+            }
+
+            if ($is_weak) {
+                $this->form_validation->set_error('verify', lang('base_password_too_weak'));
+                $form_ok = FALSE;
+            }
         }
 
         // Handle form submit
