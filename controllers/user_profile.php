@@ -3,9 +3,9 @@
 /**
  * User profile controller.
  *
- * @category   Apps
- * @package    User_Profile
- * @subpackage Controllers
+ * @category   apps
+ * @package    user-profile
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
@@ -43,9 +43,9 @@ use \Exception as Exception;
 /**
  * User profile controller.
  *
- * @category   Apps
- * @package    User_Profile
- * @subpackage Controllers
+ * @category   apps
+ * @package    user-profile
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
