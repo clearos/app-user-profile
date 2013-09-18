@@ -1,7 +1,7 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 1.1.0
+Version: 1.5.4
 Release: 1%{dist}
 Summary: User Profile
 License: GPLv3
@@ -25,7 +25,6 @@ Requires: app-base-core
 Requires: app-accounts-core
 Requires: app-groups-core
 Requires: app-users-core >= 1.0.6
-Requires: system-users-driver
 
 %description core
 The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
