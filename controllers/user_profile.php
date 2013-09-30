@@ -114,15 +114,22 @@ class User_Profile extends ClearOS_Controller
 
         if ($this->input->post('submit') && ($form_ok)) {
             try {
-                $this->user->set_password(
+                $retval = $this->user->set_password(
                     $this->input->post('old_password'),
                     $this->input->post('password'),
                     $this->input->post('verify'),
                     $username
                 );
 
-                // Handle page status a bit differently here
-                $password_updated = TRUE;
+                // Password change requests cannot be 100% pre-validated 
+                // (for example, a password that already exists in the password
+                // history).  Handle page status a bit differently.
+
+                if (empty($retval))
+                    $password_updated = TRUE;
+                else
+                   $this->form_validation->set_error('verify', $retval);
+
             } catch (Exception $e) {
                 $this->page->view_exception($e);
                 return;
