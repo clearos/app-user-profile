@@ -1,9 +1,9 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 1.5.10
+Version: 1.5.30
 Release: 1%{dist}
-Summary: **user_profile_app_name**
+Summary: User Profile
 License: GPLv3
 Group: ClearOS/Apps
 Source: %{name}-%{version}.tar.gz
@@ -15,10 +15,10 @@ Requires: app-groups
 Requires: app-users
 
 %description
-**user_profile_app_description**
+The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
 
 %package core
-Summary: **user_profile_app_name** - Core
+Summary: User Profile - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
@@ -27,7 +27,7 @@ Requires: app-groups-core
 Requires: app-users-core >= 1.0.6
 
 %description core
-**user_profile_app_description**
+The User Profile app is used to change your password and, depending on your system settings, update other profile settings.
 
 This package provides the core API and libraries.
 
@@ -77,7 +77,6 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/user_profile/packaging
-%exclude /usr/clearos/apps/user_profile/tests
 %dir /usr/clearos/apps/user_profile
 /usr/clearos/apps/user_profile/deploy
 /usr/clearos/apps/user_profile/language
