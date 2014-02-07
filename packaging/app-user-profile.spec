@@ -80,5 +80,4 @@ exit 0
 %dir /usr/clearos/apps/user_profile
 /usr/clearos/apps/user_profile/deploy
 /usr/clearos/apps/user_profile/language
-/usr/clearos/apps/user_profile/libraries
 /var/clearos/base/access_control/authenticated/user_profile
