@@ -53,7 +53,7 @@ echo form_header(lang('base_settings'));
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-echo fieldset_header(lang('user_profile_name'));
+echo fieldset_header(lang('user_profile_contact_information'));
 
 foreach ($info_map['core'] as $key_name => $details) {
     $name = "user_info[core][$key_name]";
