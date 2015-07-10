@@ -1,7 +1,7 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 2.0.20
+Version: 2.1.6
 Release: 1%{dist}
 Summary: User Profile
 License: GPLv3
