@@ -1,7 +1,7 @@
 
 Name: app-user-profile
 Epoch: 1
-Version: 2.1.6
+Version: 2.3.20
 Release: 1%{dist}
 Summary: User Profile
 License: GPLv3
@@ -77,6 +77,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/user_profile/packaging
+%exclude /usr/clearos/apps/user_profile/unify.json
 %dir /usr/clearos/apps/user_profile
 /usr/clearos/apps/user_profile/deploy
 /usr/clearos/apps/user_profile/language
