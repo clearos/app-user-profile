@@ -1,5 +1,5 @@
 <?php
 
-$lang['user_profile_app_description'] = 'The User Profile app is used to change your password and, depending on your system settings, update other profile settings.';
-$lang['user_profile_app_name'] = 'User Profile';
-$lang['user_profile_contact_information'] = 'Contact Information';
+$lang['user_profile_app_description'] = 'The User Profile app e sebelisetsoa ho fetola phasewete ya hao &#39;me, ho itšetlehile ka di-setting ya hao tsamaiso, ntjhafatsa maemong a mang profil.';
+$lang['user_profile_app_name'] = 'Profile User';
+$lang['user_profile_contact_information'] = 'Mokhoa oa puisano';
